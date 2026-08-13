@@ -1,0 +1,12 @@
+{
+  "name": "inzpireu-coguru",
+  "description": "Connect Claude to Humentors / CoGuru: mentee goals, mentor invites, and public session booking.",
+  "version": "1.0.0",
+  "author": {
+    "name": "InzpireU",
+    "url": "https://humentors.org"
+  },
+  "homepage": "https://humentors.org",
+  "repository": "https://github.com/InzpireU/inzpireu-coguru",
+  "keywords": ["mcp", "humentors", "coguru", "mentoring"]
+}

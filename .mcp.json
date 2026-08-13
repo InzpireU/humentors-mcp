@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "humentors": {
+      "type": "http",
+      "url": "https://staging-server.humentors.org/mcp"
+    }
+  }
+}
