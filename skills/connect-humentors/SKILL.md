@@ -13,12 +13,12 @@ The live tools come from the remote MCP server `humentors` (`/mcp` + OAuth). Do 
    - In Claude Code: run `/mcp`, select **humentors**, complete browser login/consent.
    - In Claude.ai: Customize → Connectors → Humentors / custom URL `{MCP}/mcp`.
 2. Call `health_check`. Expect `status: ok`.
-3. Call `whoami`.
+3. Call `whoami` again for the current app state. Do not reuse an earlier whoami.
    - If `authenticated` is false, stop and ask the user to Connect again.
    - Read `primaryPersona` / roles. Do not guess MENTEE vs MENTOR.
 4. Never print `orgRef` or other refs/IDs to the user. Keep them only for later tool calls.
 
 ## After connect
 
-- MENTEE goal invite flow → skill `/inzpireu-coguru:mentee-goals`
-- Public mentor booking → skill `/inzpireu-coguru:book-public-session`
+- MENTEE goal invite flow → skill `/humentors-coguru:mentee-goals`
+- Public mentor booking → skill `/humentors-coguru:book-public-session`

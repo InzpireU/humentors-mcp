@@ -9,7 +9,7 @@ Requires the connected Humentors MCP server. Public directory tools can work bef
 
 ## Flow
 
-1. Call `health_check`, then `list_public_mentors`.
+1. Call `health_check`, then `list_public_mentors` again. Do not reuse earlier mentor lists.
    - Prefer mentors with `allowPublicSessions=true` when the user wants to book.
    - Present a profile card: name, photo URL, tagline, skills, LinkedIn verification, public-session availability.
    - Keep `mentorRef` internal. Never print refs or UUIDs.
@@ -22,3 +22,4 @@ Requires the connected Humentors MCP server. Public directory tools can work bef
 
 - Booking order is always: list mentors → slots → book.
 - Do not invent slot times or mentor refs.
+- Always re-call tools after the user changes data in the Humentors app. Never reuse earlier tool results.

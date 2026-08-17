@@ -1,6 +1,6 @@
-# inzpireu-coguru
+# humentors-coguru
 
-Claude Code plugin for **Humentors / CoGuru**. It does not reimplement APIs. It wraps the existing remote MCP server on `inzpireu-server` and adds skills for how to use the tools.
+Claude Code plugin for **Humentors / CoGuru**. It does not reimplement APIs. It wraps the existing remote MCP server on the Humentors server and adds skills for how to use the tools.
 
 ## What you get
 
@@ -10,7 +10,7 @@ Claude Code plugin for **Humentors / CoGuru**. It does not reimplement APIs. It 
 | `.mcp.json` | Points Claude Code at that MCP URL |
 | Skills | Teach Claude mentee invites and public booking |
 
-MCP tools (from `inzpireu-server`): `health_check`, `whoami`, `list_public_mentors`, `get_available_slots`, `book_public_session`, `list_mentee_goals`, `list_mentors_for_goal`, `send_goal_invite`.
+MCP tools (from the Humentors server): `health_check`, `whoami`, `list_public_mentors`, `get_available_slots`, `book_public_session`, `list_mentee_goals`, `list_mentors_for_goal`, `send_goal_invite`.
 
 ## Prerequisites
 
@@ -27,15 +27,15 @@ Change this to production before publishing.
 ## Install (local)
 
 ```bash
-claude plugin validate ./inzpireu-coguru
-claude --plugin-dir ./inzpireu-coguru
+claude plugin validate .
+claude --plugin-dir .
 ```
 
 Then:
 
 1. `/mcp` → authenticate **humentors** (browser OAuth / Humentors login)
-2. `/inzpireu-coguru:connect-humentors`
-3. `/inzpireu-coguru:mentee-goals` or `/inzpireu-coguru:book-public-session`
+2. `/humentors-coguru:connect-humentors`
+3. `/humentors-coguru:mentee-goals` or `/humentors-coguru:book-public-session`
 
 Reload after edits: `/reload-plugins`
 
@@ -43,13 +43,13 @@ Reload after edits: `/reload-plugins`
 
 | Skill | Use |
 |--------|-----|
-| `/inzpireu-coguru:connect-humentors` | Connect + `health_check` + `whoami` |
-| `/inzpireu-coguru:mentee-goals` | Goals → mentors → invite |
-| `/inzpireu-coguru:book-public-session` | Public mentors → slots → checkout |
+| `/humentors-coguru:connect-humentors` | Connect + `health_check` + `whoami` |
+| `/humentors-coguru:mentee-goals` | Goals → mentors → invite |
+| `/humentors-coguru:book-public-session` | Public mentors → slots → checkout |
 
 ## This is not
 
-- A Fastify plugin inside `inzpireu-server`
+- A Fastify plugin inside the Humentors server
 - Claude.ai Connectors Directory listing (searchable like Gmail/Drive)
 
 Those use the same `/mcp` URL. This package is the Claude Code installable wrapper.
