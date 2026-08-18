@@ -1,59 +1,30 @@
-# humentors-coguru
+# Humentors for Claude
 
-Claude Code plugin for **Humentors / CoGuru**. It does not reimplement APIs. It wraps the existing remote MCP server on the Humentors server and adds skills for how to use the tools.
+Connect Claude to your Humentors account so you can check your role, work with mentee goals, invite mentors, and book public mentor sessions.
 
-## What you get
+## Claude.ai
 
-| Piece | Role |
-|--------|------|
-| Remote MCP | Live tools over HTTPS (`/mcp`) + OAuth |
-| `.mcp.json` | Points Claude Code at that MCP URL |
-| Skills | Teach Claude mentee invites and public booking |
+1. Open **Settings** → **Connectors**.
+2. Add a custom connector.
+3. Paste this URL:
 
-MCP tools (from the Humentors server): `health_check`, `whoami`, `list_public_mentors`, `get_available_slots`, `book_public_session`, `list_mentee_goals`, `list_mentors_for_goal`, `send_goal_invite`.
+   `https://staging-server.humentors.org/connector`
 
-## Prerequisites
+4. Click **Connect** and sign in to Humentors.
+5. Approve access, then return to Claude.
 
-- Claude Code installed
-- Public HTTPS MCP origin (staging default below)
-- Server env: `MCP_PUBLIC_URL`, `BASE_WEBAPP_URL`, `FIREBASE_WEB_API_KEY`
+You can disconnect anytime from the same Connectors page.
 
-Default MCP URL in `.mcp.json`:
+## Claude Code
 
-`https://staging-server.humentors.org/mcp`
+1. Install this plugin, or point Claude Code at this folder.
+2. Run `/mcp` and select **humentors**.
+3. Complete the browser login and allow access.
 
-Change this to production before publishing.
+After you are connected:
 
-## Install (local)
+- `/humentors-coguru:connect-humentors` — confirm you are signed in
+- `/humentors-coguru:mentee-goals` — list goals, find mentors, send an invite
+- `/humentors-coguru:book-public-session` — browse public mentors and book a session
 
-```bash
-claude plugin validate .
-claude --plugin-dir .
-```
-
-Then:
-
-1. `/mcp` → authenticate **humentors** (browser OAuth / Humentors login)
-2. `/humentors-coguru:connect-humentors`
-3. `/humentors-coguru:mentee-goals` or `/humentors-coguru:book-public-session`
-
-Reload after edits: `/reload-plugins`
-
-## Skills
-
-| Skill | Use |
-|--------|-----|
-| `/humentors-coguru:connect-humentors` | Connect + `health_check` + `whoami` |
-| `/humentors-coguru:mentee-goals` | Goals → mentors → invite |
-| `/humentors-coguru:book-public-session` | Public mentors → slots → checkout |
-
-## This is not
-
-- A Fastify plugin inside the Humentors server
-- Claude.ai Connectors Directory listing (searchable like Gmail/Drive)
-
-Those use the same `/mcp` URL. This package is the Claude Code installable wrapper.
-
-## License
-
-ISC
+If Claude says you are not connected, run `/mcp` and connect **humentors** again.
