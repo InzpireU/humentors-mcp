@@ -10,7 +10,7 @@ The live tools come from the remote MCP server `humentors` (`/connector` + OAuth
 ## Steps
 
 1. If tools return unauthorized / invalid token / “reconnect”, tell the user to Connect:
-   - In Claude Code: run `/mcp`, select **humentors**, complete browser login/consent.
+   - In Claude Code: run `/mcp`, select **Humentors**, complete browser login/consent.
    - In Claude.ai: Customize → Connectors → Humentors / custom URL `{MCP}/connector`.
 2. Call `health_check`. Expect `status: ok`.
 3. Call `whoami` again for the current app state. Do not reuse an earlier whoami.

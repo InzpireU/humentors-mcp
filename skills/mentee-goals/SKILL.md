@@ -9,10 +9,10 @@ Requires a connected Humentors MCP session and **MENTEE** persona. Always call t
 
 ## Flow
 
-1. Call `whoami` again (never reuse an earlier whoami).
+1. Call `whoami` again for the **currently connected** account (never reuse an earlier whoami).
    - If not authenticated, use `/humentors-coguru:connect-humentors`.
    - If the user is not MENTEE, stop and explain. Do not call mentee-only tools.
-2. Call `list_mentee_goals` again (optional `orgRef` from this `whoami` JSON). Do not reuse earlier goals.
+2. Call `list_mentee_goals` again using only refs from this `whoami`. Do not reuse goals from a previous account or earlier turn.
    - Present only title, type, status, description.
    - ACTIVE = self-paced; INITIATED = normal.
    - Keep `goalRef` / `programRef` / `orgRef` internal. Never print refs or UUIDs.

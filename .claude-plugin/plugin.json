@@ -1,6 +1,6 @@
 {
   "name": "humentors-coguru",
-  "description": "Connect Claude to Humentors / CoGuru: mentee goals, mentor invites, and public session booking.",
+  "description": "Connect Claude to Humentors: mentee goals, mentor invites, and public session booking.",
   "version": "1.0.0",
   "author": {
     "name": "Humentors",

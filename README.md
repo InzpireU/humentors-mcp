@@ -8,7 +8,7 @@ Connect Claude to your Humentors account so you can check your role, work with m
 2. Add a custom connector.
 3. Paste this URL:
 
-   `https://staging-server.humentors.org/connector`
+   `https://ai-stg.humentors.org/connector`
 
 4. Click **Connect** and sign in to Humentors.
 5. Approve access, then return to Claude.
@@ -18,7 +18,7 @@ You can disconnect anytime from the same Connectors page.
 ## Claude Code
 
 1. Install this plugin, or point Claude Code at this folder.
-2. Run `/mcp` and select **humentors**.
+2. Run `/mcp` and select **Humentors**.
 3. Complete the browser login and allow access.
 
 After you are connected:
@@ -27,4 +27,4 @@ After you are connected:
 - `/humentors-coguru:mentee-goals` — list goals, find mentors, send an invite
 - `/humentors-coguru:book-public-session` — browse public mentors and book a session
 
-If Claude says you are not connected, run `/mcp` and connect **humentors** again.
+If Claude says you are not connected, run `/mcp` and connect **Humentors** again.
