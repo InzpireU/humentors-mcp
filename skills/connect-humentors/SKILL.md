@@ -1,6 +1,6 @@
 ---
 name: connect-humentors
-description: Connect and verify the Humentors / CoGuru MCP connector. Use when auth fails, the user asks to connect Humentors, or before other Humentors tools.
+description: Connect and verify the Humentors MCP connector. Use when auth fails, the user asks to connect Humentors, or before other Humentors tools.
 ---
 
 # Connect Humentors
@@ -15,8 +15,17 @@ The live tools come from the remote MCP server `humentors` (`/connector` + OAuth
 2. Call `health_check`. Expect `status: ok`.
 3. Call `whoami` again for the current app state. Do not reuse an earlier whoami.
    - If `authenticated` is false, stop and ask the user to Connect again.
-   - Read `primaryPersona` / roles. Do not guess MENTEE vs MENTOR.
+   - Read `primaryPersona` / roles. Possible personas include MENTEE, MENTOR, MENTEE_AND_MENTOR, ADMIN, and NO_ROLE.
+   - Treat MENTEE_AND_MENTOR as eligible for mentee flows.
 4. Never print `orgRef` or other refs/IDs to the user. Keep them only for later tool calls.
+
+## Live data rules
+
+- Pass the current ISO timestamp as `asOf` on every tool call.
+- Call the relevant tool again for every request. Never reuse earlier results, refs, roles, goals, mentors, or slots.
+- After a connect or reconnect, call `whoami` before any account-specific tool.
+- Never ask for an attendee name or email when booking; the API gets both from the authenticated account.
+- If login expired or the account changed during Connect, ask the user to disconnect, sign in to the intended Humentors account, and reconnect.
 
 ## After connect
 

@@ -13,7 +13,7 @@ Connect Claude to your Humentors account so you can check your role, work with m
 4. Click **Connect** and sign in to Humentors.
 5. Approve access, then return to Claude.
 
-You can disconnect anytime from the same Connectors page.
+All Humentors tools require this connected account. You can disconnect anytime from the same Connectors page.
 
 ## Claude Code
 
@@ -27,4 +27,6 @@ After you are connected:
 - `/humentors-coguru:mentee-goals` — list goals, find mentors, send an invite
 - `/humentors-coguru:book-public-session` — browse public mentors and book a session
 
-If Claude says you are not connected, run `/mcp` and connect **Humentors** again.
+Humentors data is fetched again for each request, so changes made in the app appear in the next tool result. After connecting or reconnecting, run `/humentors-coguru:connect-humentors` to verify the current account before using goals or booking.
+
+If Claude says you are not connected, run `/mcp`, connect **Humentors** again, and verify the account.
