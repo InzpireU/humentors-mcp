@@ -8,7 +8,7 @@ Connect Claude to your Humentors account so you can check your role, work with m
 2. Add a custom connector.
 3. Paste this URL:
 
-   `https://ai-stg.humentors.org/connector`
+   `https://ai.humentors.org/connector`
 
 4. Click **Connect** and sign in to Humentors.
 5. Approve access, then return to Claude.

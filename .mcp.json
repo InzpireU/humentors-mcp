@@ -2,7 +2,7 @@
   "mcpServers": {
     "humentors": {
       "type": "http",
-      "url": "https://ai-stg.humentors.org/connector"
+      "url": "https://ai.humentors.org/connector"
     }
   }
 }
